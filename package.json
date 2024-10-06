@@ -1,0 +1,39 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "Scrape websites for RSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asics": "ts-node -r tsconfig-paths/register src/asics/index.ts",
+    "monacelli": "ts-node -r tsconfig-paths/register src/monacelli/index.ts",
+    "thamesAndHudson": "ts-node -r tsconfig-paths/register src/thames-and-hudson/index.ts",
+    "phaidon": "ts-node -r tsconfig-paths/register src/phaidon/index.ts",
+    "taschen": "ts-node -r tsconfig-paths/register src/taschen/index.ts",
+    "nike": "ts-node -r tsconfig-paths/register src/nike/index.ts",
+    "brooks": "ts-node -r tsconfig-paths/register src/brooks/index.ts",
+    "all": "npm-run-all --parallel thamesAndHudson monacelli phaidon taschen brooks",
+    "git-reset": "rm -rf .git/refs/original/ .git/refs/remotes/ .git/logs/ .git/packed-refs && git checkout --orphan latest_branch && git add -A && git commit -am 'Initial Commit' && git branch -D main && git branch -m main && git push --force --set-upstream origin main && git reflog expire --expire=now --all && git gc --prune=now --aggressive"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ramda": "^0.30.2",
+    "@types/rss": "^0.0.32",
+    "@types/uuid": "^10.0.0",
+    "aws-sdk": "^2.1691.0",
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "puppeteer": "^23.4.1",
+    "ramda": "^0.30.1",
+    "rss": "^1.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
